@@ -12,5 +12,8 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map((x,index)=>{
+    return x.indexOf(index===0).toUpperCase();
+  })
 }
+console.log(titleCased())
