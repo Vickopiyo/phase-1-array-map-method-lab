@@ -12,8 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials.map((x,index)=>{
-    return x.indexOf(index===0).toUpperCase();
+  return tutorials.map((line)=>{
+    const tokens=line.split(" ");
+    const tokenCap=tokens.map(
+      (token)=> token.charAt(0).toUpperCase() + token.slice(1)
+    )
+    const returnedValue = tokenCap.join(" ")
+    return returnedValue;
   })
 }
 console.log(titleCased())
